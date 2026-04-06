@@ -9,7 +9,7 @@ type CardProps = {
 
 function Card({ icon, tag, amount, description }: CardProps) {
   return (
-    <div className="flex flex-col gap-5 rounded-xl bg-neutral-50 px-6 py-5">
+    <div className="flex flex-col gap-5 rounded-2xl bg-neutral-50 px-6 py-5">
       <div className="flex items-center justify-between text-indigo-500">
         <span className={typeof icon === "string" ? "text-sm" : ""}>
           {icon}
