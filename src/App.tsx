@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import APPlayout from "./ui/APPlayout";
 import HomePage from "./Pages/HomePage";
-import Books from "./Pages/Books";
+import BooksPage from "./Pages/BooksPage";
 import Vault from "./Pages/Vault";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route element={<APPlayout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/books" element={<Books />} />
+          <Route path="/books" element={<BooksPage />} />
           <Route path="/vault" element={<Vault />} />
         </Route>
       </Routes>

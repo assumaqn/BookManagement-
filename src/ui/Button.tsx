@@ -7,7 +7,7 @@ type ButtonType = {
 function Button({ children, icon }: ButtonType) {
   if (icon) {
     return (
-      <button className="flex items-center justify-center gap-1 rounded-2xl px-3 py-2 text-xs capitalize text-gray-700">
+      <button className="flex items-center justify-center gap-1 rounded-2xl border-[0.75px] border-indigo-300 px-3 py-2 text-xs capitalize text-gray-700">
         {icon}
         {children}
       </button>
