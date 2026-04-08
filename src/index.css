@@ -9,5 +9,5 @@
   box-sizing: border-box;
 }
 .active {
-  color: red;
+  border-bottom: 2px solid rgba(0, 0, 255, 0.76);
 }

@@ -1,5 +1,5 @@
 function Logo() {
-  return <h2 className="text-xl font-extrabold uppercase">Book vault</h2>;
+  return <h2 className="text-xl font-extrabold uppercase">ShelfTrack</h2>;
 }
 
 export default Logo;

@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import APPlayout from "./ui/APPlayout";
 import HomePage from "./Pages/HomePage";
 import BooksPage from "./Pages/BooksPage";
-import Vault from "./Pages/Vault";
+import PageVault from "./Pages/PageVault";
 
 function App() {
   return (
@@ -11,7 +11,8 @@ function App() {
         <Route element={<APPlayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/books" element={<BooksPage />} />
-          <Route path="/vault" element={<Vault />} />
+
+          <Route path="/vault" element={<PageVault />} />
         </Route>
       </Routes>
     </BrowserRouter>

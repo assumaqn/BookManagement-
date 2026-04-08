@@ -4,7 +4,7 @@ import Icons from "./Icons";
 
 function Nav() {
   return (
-    <div className="flex items-center justify-between border-b-[0.5px] border-slate-300 bg-neutral-50 p-4">
+    <div className="flex items-center justify-between border-b-[0.5px] border-slate-300 bg-neutral-50 p-4 text-sm text-gray-500">
       <Logo />
 
       <ul className="flex items-center gap-5">

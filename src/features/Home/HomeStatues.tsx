@@ -1,5 +1,6 @@
 import Card from "../../ui/Card";
 import { MdOutlineLibraryBooks } from "react-icons/md";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 function HomeStatues() {
   return (
     <div className="gap grid grid-cols-3 items-center justify-between gap-10">
@@ -10,7 +11,7 @@ function HomeStatues() {
         description="Total Books"
       />
       <Card
-        icon={<MdOutlineLibraryBooks size={21} />}
+        icon={<IoMdCheckmarkCircleOutline size={21} />}
         tag="Completed"
         amount={42}
         description="Books Read"
