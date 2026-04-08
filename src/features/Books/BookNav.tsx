@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Input from "../../ui/Input";
 
 function BookNav() {
   const categories = [
@@ -10,11 +11,7 @@ function BookNav() {
   ];
   return (
     <div className="flex items-center justify-between gap-10">
-      <input
-        type="search"
-        className="w-[25%] rounded-lg bg-gray-200 px-2 py-2 placeholder:text-xs"
-        placeholder="Search any book by title..."
-      />
+      <Input width="25" placeholder="Search any book by title..." />
       <nav className="flex items-center gap-10 text-sm text-gray-700">
         {categories.map((category) => (
           <NavLink

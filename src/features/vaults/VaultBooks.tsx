@@ -33,16 +33,10 @@ function VaultBooks() {
       author: "Kumneger",
       image: "/random-4.png",
     },
-    {
-      id: 5,
-      title: "The Silent Peak",
-      author: "Kumneger",
-      image: "/random-3.png",
-    },
   ];
 
   return (
-    <div className="grid grid-cols-6 gap-4">
+    <div className="grid grid-cols-5 gap-x-5">
       {books.map((book) => (
         <BookCard key={book.id} {...book} />
       ))}

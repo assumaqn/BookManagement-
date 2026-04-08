@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Input from "../../ui/Input";
 
 function VaultNav() {
   const navlinks = [
@@ -16,7 +17,7 @@ function VaultNav() {
     },
   ];
   return (
-    <div className="flex items-center justify-between gap-3">
+    <div className="flex items-center justify-between gap-3 border-b-[0.75px] border-gray-300 pb-4">
       <ul className="flex items-center justify-between gap-10">
         {navlinks.map((link) => (
           <NavLink
@@ -27,11 +28,7 @@ function VaultNav() {
           </NavLink>
         ))}
       </ul>
-      <input
-        type="search"
-        className="w-[25%] rounded-lg bg-gray-300 px-2 py-2 placeholder:px-2 placeholder:text-xs"
-        placeholder="Search any book by title..."
-      />
+      <Input width="25" placeholder="Search any book by title..." />
     </div>
   );
 }

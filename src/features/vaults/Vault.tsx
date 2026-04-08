@@ -6,7 +6,7 @@ import VaultStatus from "./VaultStatus";
 
 function Vault() {
   return (
-    <div className="mx-auto flex max-w-screen-xl flex-col gap-28 px-6 py-11">
+    <div className="mx-auto flex max-w-screen-xl flex-col gap-20 px-6 py-11">
       <VaultHeader />
       <VaultStatus />
       <VaultNav />

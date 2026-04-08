@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { motion } from "framer-motion";
 import { FaPlus } from "react-icons/fa6";
 type BookCardProps = {
   title: string;
@@ -8,12 +9,12 @@ type BookCardProps = {
 
 function BookCard({ title, author, image }: BookCardProps) {
   return (
-    <div className="w-fit rounded-2xl bg-neutral-50 p-3 shadow-sm">
-      <div>
+    <motion.div className="group w-full cursor-pointer rounded-2xl bg-neutral-50 p-3 shadow-md transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+      <div className="overflow-hidden rounded-xl">
         <img
           src={image}
           alt={title}
-          className="h-[250px] w-[150px] rounded-xl object-cover"
+          className="h-[250px] w-[250px] object-cover transition-transform duration-300 ease-out group-hover:scale-105"
         />
       </div>
 
@@ -25,7 +26,7 @@ function BookCard({ title, author, image }: BookCardProps) {
       <div className="mt-3">
         <Button icon={<FaPlus />}>Add to Vault</Button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

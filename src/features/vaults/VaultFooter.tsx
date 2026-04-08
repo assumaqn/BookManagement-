@@ -1,4 +1,4 @@
-import Button from "../../ui/Button";
+import ButtonLink from "../../ui/ButtonLink";
 
 function VaultFooter() {
   return (
@@ -10,7 +10,7 @@ function VaultFooter() {
         Welcome back to your private sanctuary. Your curated collection of
         thoughts,chapters and discoveries awaits.
       </p>
-      <Button>Explore Recommendations</Button>
+      <ButtonLink to="books">Explore Recommendations</ButtonLink>
     </div>
   );
 }

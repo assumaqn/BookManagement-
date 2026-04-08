@@ -78,7 +78,7 @@ function BookDisplay() {
 
   return (
     <>
-      <div className="grid grid-cols-6 gap-4">
+      <div className="grid grid-cols-4 gap-x-8 gap-y-8">
         {books.map((book) => (
           <BookCard key={book.id} {...book} />
         ))}
