@@ -1,19 +1,25 @@
 import { motion } from "framer-motion";
 import { FaRegTrashCan, FaPlus } from "react-icons/fa6";
+import { CiCircleCheck } from "react-icons/ci";
 import Button from "./Button";
+
+import { MouseEventHandler } from "react";
 
 type BookCardProps = {
   title: string;
   author: string;
   coverImage: string;
+  onAdd?: MouseEventHandler<HTMLButtonElement>;
   variant?: "default" | "vault";
+  isVault?: boolean;
 };
 
 function BaseCard({
   title,
   author,
   coverImage: image,
-
+  onAdd,
+  isVault,
   variant = "default",
 }: BookCardProps) {
   return (
@@ -23,7 +29,9 @@ function BaseCard({
         <img
           src={image}
           alt={title}
-          className="h-[250px] w-[250px] object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+          className={`h-[250px] w-[250px] object-cover transition-transform duration-300 ease-out group-hover:scale-105 ${
+            isVault ? "opacity-1 blur-sm" : ""
+          }`}
         />
       </div>
 
@@ -53,8 +61,22 @@ function BaseCard({
               <FaRegTrashCan color="red" />
             </button>
           </>
+        ) : isVault ? (
+          <Button
+            icon={<CiCircleCheck size={16} />}
+            bgColor="bg-indigo-300"
+            onClick={onAdd}
+            isVault={isVault}
+          >
+            Added
+          </Button>
         ) : (
-          <Button icon={<FaPlus />} bgColor="bg-indigo-300">
+          <Button
+            icon={<FaPlus />}
+            bgColor="bg-indigo-300"
+            onClick={onAdd}
+            isVault={isVault}
+          >
             Add to Vault
           </Button>
         )}

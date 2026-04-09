@@ -1,3 +1,5 @@
+import { vaultData } from "../../data/VaultData";
+import NoVault from "./NoVault";
 import VaultBooks from "./VaultBooks";
 import VaultFooter from "./VaultFooter";
 import VaultHeader from "./VaultHeader";
@@ -7,11 +9,17 @@ import VaultStatus from "./VaultStatus";
 function Vault() {
   return (
     <div className="mx-auto flex max-w-screen-xl flex-col gap-20 px-6 py-11">
-      <VaultHeader />
-      <VaultStatus />
-      <VaultNav />
-      <VaultBooks />
-      <VaultFooter />
+      {vaultData.length == 0 ? (
+        <NoVault />
+      ) : (
+        <>
+          <VaultHeader />
+          <VaultStatus />
+          <VaultNav />
+          <VaultBooks />
+          <VaultFooter />
+        </>
+      )}
     </div>
   );
 }
