@@ -17,17 +17,10 @@ type Book = {
 function BookDisplay() {
   const [vault, setVault] = useState<number[]>([]);
 
-  // function handleAdd(book: Book) {
-  //   setVault((prev) => [...prev, book.id]);
-  //   toast.success(`"${book.title}" is  added to your vault!!`);
-  //   vaultData.push(book);
-  // }
   function handleAdd(book: Book) {
-    setVault((prev) => {
-      toast.success(`"${book.title}" added to your vault!`);
-      return [...prev, book.id];
-    });
-    console.log(vault);
+    setVault((prev) => [...prev, book.id]);
+    toast.success(`"${book.title}" is  added to your vault!!`);
+    vaultData.push(book);
   }
 
   return (

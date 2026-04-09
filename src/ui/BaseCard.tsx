@@ -4,9 +4,11 @@ import { CiCircleCheck } from "react-icons/ci";
 import Button from "./Button";
 
 import { MouseEventHandler } from "react";
+import { vaultData } from "../data/VaultData";
 
 type BookCardProps = {
   title: string;
+  id: number;
   author: string;
   coverImage: string;
   onAdd?: MouseEventHandler<HTMLButtonElement>;
@@ -16,12 +18,18 @@ type BookCardProps = {
 
 function BaseCard({
   title,
+  id,
   author,
   coverImage: image,
   onAdd,
   isVault,
   variant = "default",
 }: BookCardProps) {
+  function handleDelete(id: number) {
+    (vaultData.filter((book: { id: number }) => book.id !== id),
+      console.log("Updated vaultBooks:", vaultData));
+  }
+
   return (
     <motion.div className="group relative w-full cursor-pointer rounded-2xl bg-neutral-50 p-3 shadow-md transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
       {/* Image */}
@@ -57,7 +65,7 @@ function BaseCard({
               <label className="text-sm text-gray-500">Mark as read</label>
             </div>
 
-            <button>
+            <button onClick={() => handleDelete(id)}>
               <FaRegTrashCan color="red" />
             </button>
           </>

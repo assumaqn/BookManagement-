@@ -5,8 +5,8 @@ function VaultHeader() {
         Your vault
       </h2>
       <p className="w-[50%] text-sm text-gray-500">
-        Welcome back to your private sanctuary. Your curated collection of
-        thoughts,chapters and discoveries awaits.
+        Step inside your private sanctuary, where every thought, chapter, and
+        discovery you treasure is waiting to be explored.
       </p>
     </div>
   );

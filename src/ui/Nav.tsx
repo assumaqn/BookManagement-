@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
-import Icons from "./Icons";
+
+import Modal from "./Modal";
 
 function Nav() {
   return (
@@ -15,7 +16,7 @@ function Nav() {
 
         <NavLink to="/vault">My vault</NavLink>
       </motion.ul>
-      <Icons />
+      <Modal />
     </div>
   );
 }

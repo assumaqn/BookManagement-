@@ -5,9 +5,8 @@ function BookHeader() {
         discover your next journey
       </h1>
       <p className="w-[50%] text-sm leading-6 text-gray-400">
-        Note: The Alchemist tells the story of Santiago, a young shepherd who
-        dreams of finding treasure in the Egyptian desert. The novel explores
-        themes of destiny, personal legend.
+        Dive into a world of books—find summaries, highlights, and
+        recommendations to spark your next reading adventure.
       </p>
     </div>
   );
