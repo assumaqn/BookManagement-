@@ -7,7 +7,7 @@ function HomeHeader() {
         <span className="text-sm capitalize text-indigo-400">
           Member DashBoard
         </span>
-        <h1 className="w-[70%] text-6xl font-semibold leading-tight tracking-wide text-gray-800">
+        <h1 className="w-[70%] text-6xl font-extrabold leading-tight tracking-wide text-gray-900">
           Your Reading Dashboard
         </h1>
         <p className="w-[80%] text-sm text-gray-500">

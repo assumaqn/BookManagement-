@@ -10,7 +10,7 @@ function BookNav() {
     { name: "Literary Fiction", path: "/Fiction" },
   ];
   return (
-    <div className="flex items-center justify-between gap-10">
+    <div className="flex items-center justify-between gap-10 border-b-[0.75px] border-gray-300 pb-4">
       <Input width="25" placeholder="Search any book by title..." />
       <nav className="flex items-center gap-10 text-sm text-gray-700">
         {categories.map((category) => (

@@ -11,7 +11,7 @@ type CardProps = {
 function Card({ icon, tag, amount, description, bg }: CardProps) {
   return (
     <div
-      className={`flex cursor-pointer flex-col gap-5 rounded-2xl ${bg ? bg : "bg-neutral-50"} px-6 py-5 shadow-md transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg`}
+      className={`flex cursor-pointer flex-col gap-5 rounded-2xl ${bg ? bg : "bg-neutral-100"} px-6 py-5 shadow-md transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg`}
     >
       <div className="flex items-center justify-between text-indigo-500">
         <span className={typeof icon === "string" ? "text-sm" : ""}>

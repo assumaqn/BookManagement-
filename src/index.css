@@ -10,4 +10,5 @@
 }
 .active {
   border-bottom: 2px solid rgba(0, 0, 255, 0.76);
+  color: rgba(0, 0, 255, 0.486);
 }

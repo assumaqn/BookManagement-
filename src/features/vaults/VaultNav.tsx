@@ -22,7 +22,7 @@ function VaultNav() {
         {navlinks.map((link) => (
           <NavLink
             to={link.path}
-            className="rounded-lg bg-gray-300 px-2 py-1 text-sm"
+            className="rounded-xl bg-gray-300 px-4 py-1 text-center text-sm text-gray-700"
           >
             {link.name}
           </NavLink>

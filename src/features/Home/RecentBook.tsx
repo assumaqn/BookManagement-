@@ -5,7 +5,7 @@ function RecentBook() {
   return (
     <div className="flex items-center gap-6 overflow-hidden rounded-3xl bg-neutral-50">
       <div>
-        <img src="/random-2.png" alt="" className="w-[500px]" />
+        <img src="/random-5.png" alt="" className="w-[500px]" />
       </div>
       <div className="flex flex-col items-start gap-5 px-4">
         <span className="rounded-lg bg-indigo-200 px-2 py-1 text-xs text-indigo-600">
