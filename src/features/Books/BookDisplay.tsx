@@ -1,6 +1,5 @@
 import { Books } from "../../data/data";
 import BaseCard from "../../ui/BaseCard";
-import toast from "react-hot-toast";
 
 import { useBook } from "../../context/context";
 
@@ -19,7 +18,6 @@ function BookDisplay() {
 
   function handleAdd(book: Book) {
     AddToVault(book);
-    toast.success(`"${book.title}" has been added to your vault!`);
   }
 
   return (

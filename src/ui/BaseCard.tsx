@@ -26,15 +26,19 @@ function BaseCard({
   isVault,
   variant = "default",
 }: BookCardProps) {
-  const { ToggleRead, vault } = useBook();
+  const { ToggleRead, vault, DeleteBook } = useBook();
 
-  // function handleDelete(id: number) {
-  //   (vaultData.filter((book: { id: number }) => book.id !== id),
-  //     console.log("Updated vaultBooks:", vaultData));
-  // }
+  const checed = vault.find((book) => book.id === id)?.isReading;
 
   return (
-    <motion.div className="group relative w-full cursor-pointer rounded-2xl bg-neutral-50 p-3 shadow-md transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+    <motion.div
+      className="group relative w-full cursor-pointer rounded-2xl bg-neutral-50 p-3 shadow-md transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg"
+      layout
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.8, y: 20 }}
+      transition={{ duration: 0.25 }}
+    >
       {/* Image */}
       <div className="overflow-hidden rounded-xl">
         <img
@@ -64,13 +68,14 @@ function BaseCard({
             <div className="flex items-center gap-2">
               <input
                 type="checkbox"
+                checked={checed}
                 className="h-4 w-4 cursor-pointer"
                 onChange={() => ToggleRead(id)}
               />
               <label className="text-sm text-gray-500">Mark as read</label>
             </div>
 
-            <button>
+            <button onClick={() => DeleteBook(id)}>
               <FaRegTrashCan color="red" />
             </button>
           </>
