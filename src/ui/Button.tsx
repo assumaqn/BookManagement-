@@ -11,7 +11,7 @@ function Button({ children, icon, bgColor, onClick, isVault }: ButtonType) {
   if (icon) {
     return (
       <button
-        className={`flex w-full items-center disabled:cursor-not-allowed ${bgColor} justify-center gap-1 rounded-2xl border-[0.75px] border-indigo-300 px-3 py-2 text-xs capitalize text-gray-700 group-hover:bg-indigo-400`}
+        className={`flex w-full items-center disabled:cursor-not-allowed ${bgColor} justify-center gap-1 rounded-2xl border-[0.75px] border-indigo-300 px-2 py-2 text-xs capitalize text-gray-700 group-hover:bg-indigo-400`}
         onClick={onClick}
         disabled={isVault}
       >

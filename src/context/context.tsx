@@ -14,21 +14,26 @@ type Book = {
 
 type State = {
   vault: Book[];
+  Goal: number;
 };
 
 type Action =
   | { type: "added to vault"; payload: Book }
   | { type: "toggleRead"; payload: number }
-  | { type: "DeleteBook"; payload: number };
+  | { type: "DeleteBook"; payload: number }
+  | { type: "annualGoal"; payload: number };
 
 type ContextType = {
   vault: Book[];
+  Goal: number;
   AddToVault: (book: Book) => void;
   ToggleRead: (id: number) => void;
   DeleteBook: (id: number) => void;
+  handelGoal: (goal: number) => void;
 };
 const initialState: State = {
   vault: [],
+  Goal: 0,
 };
 
 const BookContext = createContext<ContextType | null>(null);
@@ -58,6 +63,11 @@ function reducer(state: State, action: Action): State {
         ...state,
         vault: state.vault.filter((book) => book.id !== action.payload),
       };
+    case "annualGoal":
+      return {
+        ...state,
+        Goal: action.payload,
+      };
 
     default:
       return state;
@@ -65,7 +75,7 @@ function reducer(state: State, action: Action): State {
 }
 
 function BookState({ children }: { children: ReactNode }) {
-  const [{ vault }, dispatch] = useReducer(reducer, initialState);
+  const [{ vault, Goal }, dispatch] = useReducer(reducer, initialState);
 
   function AddToVault(book: Book) {
     const current = Books.find((el) => el.id == book.id);
@@ -92,8 +102,13 @@ function BookState({ children }: { children: ReactNode }) {
     );
   }
 
+  function handelGoal(goal: number) {
+    dispatch({ type: "annualGoal", payload: goal });
+  }
   return (
-    <BookContext.Provider value={{ vault, AddToVault, ToggleRead, DeleteBook }}>
+    <BookContext.Provider
+      value={{ vault, AddToVault, ToggleRead, DeleteBook, Goal, handelGoal }}
+    >
       {children}
     </BookContext.Provider>
   );

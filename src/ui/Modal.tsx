@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { motion, AnimatePresence } from "framer-motion";
+import { useBook } from "../context/context";
 
 function Modal() {
   const [isOpen, setIsOpen] = useState(false);
+  const { handelGoal } = useBook();
+
   const [inputValue, setInputValue] = useState("");
 
   function handleClose() {
@@ -12,7 +15,8 @@ function Modal() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    console.log("Input value:", inputValue);
+
+    handelGoal(+inputValue);
     setInputValue("");
     handleClose();
   }
@@ -51,6 +55,7 @@ function Modal() {
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
+                  placeholder="Type your annual Goal...."
                   className="mb-4 w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
 

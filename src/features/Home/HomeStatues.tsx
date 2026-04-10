@@ -4,9 +4,11 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { Books } from "../../data/data";
 import { useBook } from "../../context/context";
 function HomeStatues() {
-  const { vault } = useBook();
+  const { vault, Goal } = useBook();
   const totalBook = Books.length;
   const totalReadBook = vault.filter((book) => book.isReading == true).length;
+  const sub = Goal;
+
   return (
     <div className="gap grid grid-cols-3 items-center justify-between gap-10">
       <Card
@@ -26,11 +28,18 @@ function HomeStatues() {
         tag="84%"
         amount={
           <span className="text-md">
-            21/25 <sub className="text-xs text-gray-600">Titles</sub>
+            <>
+              {totalReadBook}/{Goal}
+              <sub className="text-xs text-gray-600">Books</sub>
+            </>
           </span>
         }
         description={
-          <progress value={90} max={100} className="h-2 w-full rounded-md" />
+          <progress
+            value={totalReadBook}
+            max={Goal}
+            className="h-2 w-full rounded-md"
+          />
         }
       />
     </div>
