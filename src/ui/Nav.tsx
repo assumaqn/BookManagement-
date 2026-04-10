@@ -16,6 +16,7 @@ function Nav() {
 
         <NavLink to="/vault">My vault</NavLink>
       </motion.ul>
+
       <Modal />
     </div>
   );
