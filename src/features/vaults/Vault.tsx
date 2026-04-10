@@ -19,7 +19,7 @@ function Vault() {
       className="mx-auto flex max-w-screen-xl flex-col gap-20 px-6 py-11"
     >
       {vault.length == 0 ? (
-        <NoVault />
+        <NoVault message="No books in your vault yet" />
       ) : (
         <>
           <VaultHeader />

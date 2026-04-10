@@ -2,6 +2,7 @@ import { AnimatePresence } from "motion/react";
 import { useBook } from "../../context/context";
 import BaseCard from "../../ui/BaseCard";
 import { useSearchParams } from "react-router-dom";
+import NoVault from "./NoVault";
 
 type Book = {
   id: number;
@@ -24,8 +25,12 @@ function VaultBooks() {
     BookToDisplay = vaultData;
   } else if (query === "read") {
     BookToDisplay = vaultData.filter((book) => book.isReading === true);
+    if (BookToDisplay.length == 0)
+      return <NoVault message="You haven’t started reading any books yet" />;
   } else if (query === "unread") {
     BookToDisplay = vaultData.filter((book) => book.isReading === false);
+    if (BookToDisplay.length == 0)
+      return <NoVault message="No unread books available" />;
   }
   return (
     <div className="grid grid-cols-5 gap-5">
