@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
+import { motion } from "framer-motion";
 
 function Modal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +27,17 @@ function Modal() {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.2 }}
+          exit={{ y: -20, opacity: 0 }}
+        >
           <div className="w-96 rounded-lg bg-white p-6">
-            <h2 className="mb-4 text-xl font-semibold">Enter Your Goal</h2>
+            <h2 className="mb-4 text-xl font-semibold capitalize">
+              Enter How Many Booy you want to read{" "}
+            </h2>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -54,7 +63,7 @@ function Modal() {
               </div>
             </form>
           </div>
-        </div>
+        </motion.div>
       )}
     </>
   );

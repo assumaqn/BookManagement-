@@ -1,17 +1,15 @@
-// import { Books } from "../../data/data";
-import { vaultData } from "../../data/VaultData";
+import { useBook } from "../../context/context";
 import BaseCard from "../../ui/BaseCard";
 
-// import VaultCard from "../../ui/VaultCard";
-
 function VaultBooks() {
+  const { vault: vaultData } = useBook();
+
   return (
     <div className="grid grid-cols-5 gap-5">
-      {vaultData.map((book) => (
-        <BaseCard {...book} variant="vault" />
-      ))}
+      {vaultData.map((book) => {
+        return <BaseCard key={book.id} {...book} variant="vault" />;
+      })}
     </div>
   );
 }
-
 export default VaultBooks;

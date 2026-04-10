@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { FaRegTrashCan, FaPlus } from "react-icons/fa6";
-import { CiCircleCheck } from "react-icons/ci";
+
 import Button from "./Button";
 
 import { MouseEventHandler } from "react";
-import { vaultData } from "../data/VaultData";
+import { CiCircleCheck } from "react-icons/ci";
+import { useBook } from "../context/context";
 
 type BookCardProps = {
   title: string;
@@ -25,10 +26,12 @@ function BaseCard({
   isVault,
   variant = "default",
 }: BookCardProps) {
-  function handleDelete(id: number) {
-    (vaultData.filter((book: { id: number }) => book.id !== id),
-      console.log("Updated vaultBooks:", vaultData));
-  }
+  const { ToggleRead, vault } = useBook();
+
+  // function handleDelete(id: number) {
+  //   (vaultData.filter((book: { id: number }) => book.id !== id),
+  //     console.log("Updated vaultBooks:", vaultData));
+  // }
 
   return (
     <motion.div className="group relative w-full cursor-pointer rounded-2xl bg-neutral-50 p-3 shadow-md transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
@@ -37,9 +40,7 @@ function BaseCard({
         <img
           src={image}
           alt={title}
-          className={`h-[250px] w-[250px] object-cover transition-transform duration-300 ease-out group-hover:scale-105 ${
-            isVault ? "opacity-1 blur-sm" : ""
-          }`}
+          className={`h-[250px] w-[250px] object-cover transition-transform duration-300 ease-out group-hover:scale-105`}
         />
       </div>
 
@@ -52,7 +53,7 @@ function BaseCard({
       {/* Vault badge */}
       {variant === "vault" && (
         <span className="absolute right-6 top-4 rounded-lg bg-blue-500 px-5 py-1 text-xs font-semibold text-gray-200">
-          Unread
+          {vault.find((book) => book.id === id)?.isReading ? "Read" : "Unread"}
         </span>
       )}
 
@@ -61,11 +62,15 @@ function BaseCard({
         {variant === "vault" ? (
           <>
             <div className="flex items-center gap-2">
-              <input type="checkbox" className="h-4 w-4" />
+              <input
+                type="checkbox"
+                className="h-4 w-4 cursor-pointer"
+                onChange={() => ToggleRead(id)}
+              />
               <label className="text-sm text-gray-500">Mark as read</label>
             </div>
 
-            <button onClick={() => handleDelete(id)}>
+            <button>
               <FaRegTrashCan color="red" />
             </button>
           </>
@@ -82,8 +87,8 @@ function BaseCard({
           <Button
             icon={<FaPlus />}
             bgColor="bg-indigo-300"
-            onClick={onAdd}
             isVault={isVault}
+            onClick={onAdd}
           >
             Add to Vault
           </Button>

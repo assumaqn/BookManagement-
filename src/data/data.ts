@@ -6,7 +6,7 @@ export const Books = [
     coverImage:
       "https://i.pinimg.com/736x/99/bc/52/99bc52fe10a4a7f9fd38d29b4258045c.jpg",
     category: "Fantasy",
-    isReading: true,
+    isReading: false,
     description:
       "A young boy discovers he is a wizard and begins his journey at Hogwarts.",
   },
@@ -39,7 +39,7 @@ export const Books = [
     coverImage:
       "https://i.pinimg.com/736x/1e/99/5a/1e995ae5e1efa2596325855b9333ebf4.jpg",
     category: "Sci-Fi",
-    isReading: true,
+    isReading: false,
     description:
       "A desert planet becomes the center of political and mystical conflict.",
   },
@@ -71,7 +71,7 @@ export const Books = [
     coverImage:
       "https://i.pinimg.com/control1/736x/22/57/f6/2257f60e84967cfa6fa9427fdc0cef46.jpg",
     category: "Romance",
-    isReading: true,
+    isReading: false,
     description:
       "A classic love story exploring manners, upbringing, and marriage.",
   },
@@ -103,7 +103,7 @@ export const Books = [
     coverImage:
       "https://i.pinimg.com/736x/3a/73/23/3a73238012f149534b21a00078c3ff2c.jpg",
     category: "Literary Fiction",
-    isReading: true,
+    isReading: false,
     description:
       "A deep exploration of relationships and emotional connection.",
   },
@@ -125,7 +125,7 @@ export const Books = [
     coverImage:
       "https://i.pinimg.com/control1/736x/52/c4/5e/52c45e2f8b708794bcc3653265d9211c.jpg",
     category: "Literary Fiction",
-    isReading: true,
+    isReading: false,
     description:
       "A story of racial injustice and moral growth in the American South.",
   },
