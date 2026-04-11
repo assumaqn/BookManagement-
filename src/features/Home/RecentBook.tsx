@@ -24,7 +24,7 @@ function RecentBook() {
   return (
     <div className="flex w-[90%] items-center gap-6 overflow-hidden rounded-3xl bg-neutral-50">
       <div>
-        <img src={cuurentReading?.coverImage} alt="" className="w-[250px]" />
+        <img src={cuurentReading?.coverImage} alt="" className="w-[600px]" />
       </div>
 
       <div className="flex flex-col items-start gap-5 px-4">

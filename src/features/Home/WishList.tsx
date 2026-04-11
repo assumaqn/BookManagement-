@@ -1,6 +1,7 @@
 import { FaArrowRight } from "react-icons/fa";
 import BookListCard from "../../ui/BookListCard";
 import { Books } from "../../data/data";
+import { Link } from "react-router-dom";
 
 function Wishlist() {
   const wishList = [...Books].sort(() => Math.random() - 0.5).slice(0, 5);
@@ -11,7 +12,9 @@ function Wishlist() {
         <span className="text-lg font-bold text-gray-800">
           Recommended for You
         </span>
-        <FaArrowRight className="cursor-pointer text-gray-400 hover:text-gray-600" />
+        <Link to="/books">
+          <FaArrowRight className="cursor-pointer text-gray-400 hover:text-gray-600" />
+        </Link>
       </div>
 
       {wishList.map((list) => (

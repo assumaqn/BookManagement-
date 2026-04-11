@@ -8,7 +8,7 @@ export const Books = [
     category: "Fantasy",
     isReading: false,
     description:
-      "A young boy discovers he is a wizard and begins his journey at Hogwarts.",
+      "A young boy discovers he is a wizard and is invited to Hogwarts School of Witchcraft and Wizardry. There, he forms close friendships and learns powerful magic. As he grows, he uncovers secrets about his past and his connection to a dark wizard. His journey is filled with danger, courage, and destiny.",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const Books = [
     category: "Fantasy",
     isReading: false,
     description:
-      "Bilbo Baggins embarks on an unexpected journey with dwarves to reclaim treasure.",
+      "Bilbo Baggins is a quiet hobbit who is unexpectedly swept into an epic adventure. He joins a group of dwarves on a quest to reclaim their stolen treasure from a dragon. Along the way, he faces dangerous creatures and difficult choices. The journey transforms him into a braver and wiser individual.",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const Books = [
     category: "Fantasy",
     isReading: false,
     description:
-      "Noble families fight for control of the Iron Throne in a brutal world.",
+      "In a land where seasons last for years, noble families compete for power and control of the Iron Throne. Alliances are fragile, and betrayal is common in this dangerous political world. Meanwhile, a mysterious threat grows beyond the northern wall. The story weaves multiple characters in a complex and unpredictable narrative.",
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export const Books = [
     category: "Sci-Fi",
     isReading: false,
     description:
-      "A desert planet becomes the center of political and mystical conflict.",
+      "On the desert planet Arrakis, a valuable resource called spice controls the fate of the universe. Paul Atreides becomes central to a conflict involving politics, religion, and power. As danger surrounds him, he embraces a mysterious destiny. His choices could change the future of humanity forever.",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const Books = [
     category: "Sci-Fi",
     isReading: false,
     description:
-      "A child prodigy is trained to defend Earth from alien threats.",
+      "Ender Wiggin is a gifted child chosen to train at a military school in space. He faces intense challenges designed to prepare him for an alien invasion. Through strategy and leadership, he rises above others. However, the cost of his success weighs heavily on him.",
   },
   {
     id: 6,
@@ -62,7 +62,8 @@ export const Books = [
       "https://i.pinimg.com/736x/7f/35/fa/7f35fa81ce5e58f1ed7bb646341510d4.jpg",
     category: "Sci-Fi",
     isReading: false,
-    description: "A mathematician predicts the fall of a galactic empire.",
+    description:
+      "Hari Seldon predicts the fall of a vast galactic empire using advanced mathematics. To preserve knowledge, he creates the Foundation at the edge of the galaxy. As chaos begins to unfold, his plan is put to the test. The story explores science, power, and the fate of civilization.",
   },
   {
     id: 7,
@@ -73,7 +74,7 @@ export const Books = [
     category: "Romance",
     isReading: false,
     description:
-      "A classic love story exploring manners, upbringing, and marriage.",
+      "Elizabeth Bennet navigates issues of class, family, and marriage in 19th-century England. She meets the wealthy but reserved Mr. Darcy, leading to misunderstandings and tension. Over time, both characters grow and change. Their journey reveals the power of love and self-awareness.",
   },
   {
     id: 8,
@@ -84,7 +85,7 @@ export const Books = [
     category: "Romance",
     isReading: false,
     description:
-      "An emotional story of love between two very different people.",
+      "Louisa Clark takes a job caring for Will Traynor, a man left paralyzed after an accident. Their lives are completely different, yet they form a deep connection. Through their relationship, both discover new perspectives on life. The story is emotional, touching, and thought-provoking.",
   },
   {
     id: 9,
@@ -94,7 +95,8 @@ export const Books = [
       "https://i.pinimg.com/736x/04/22/16/042216bd2997eae7873e03163d65bff6.jpg",
     category: "Romance",
     isReading: false,
-    description: "A timeless love story that spans decades.",
+    description:
+      "Noah and Allie fall deeply in love despite coming from different social backgrounds. Their relationship faces many challenges over the years. Even when separated, their love remains strong. It is a timeless story about commitment, memory, and enduring love.",
   },
   {
     id: 10,
@@ -105,7 +107,7 @@ export const Books = [
     category: "Literary Fiction",
     isReading: false,
     description:
-      "A deep exploration of relationships and emotional connection.",
+      "Marianne and Connell share a complicated relationship that evolves over time. They move between friendship, love, and emotional distance. Their connection is deeply affected by personal struggles and social dynamics. The story explores intimacy, identity, and communication.",
   },
   {
     id: 11,
@@ -116,7 +118,7 @@ export const Books = [
     category: "Literary Fiction",
     isReading: false,
     description:
-      "A critique of the American Dream through the life of Jay Gatsby.",
+      "Jay Gatsby is a mysterious millionaire known for his extravagant parties. He is driven by his love for Daisy Buchanan and a desire to recreate the past. Through the eyes of Nick Carraway, we see the illusion of the American Dream. The story reveals themes of wealth, love, and disillusionment.",
   },
   {
     id: 12,
@@ -127,7 +129,7 @@ export const Books = [
     category: "Literary Fiction",
     isReading: false,
     description:
-      "A story of racial injustice and moral growth in the American South.",
+      "Scout Finch grows up in the racially divided American South. Her father, Atticus Finch, defends a Black man wrongly accused of a crime. Through her eyes, we see injustice, courage, and moral strength. The story teaches empathy and standing up for what is right.",
   },
   {
     id: 13,
@@ -138,7 +140,7 @@ export const Books = [
     category: "Fantasy",
     isReading: false,
     description:
-      "The story of a magically gifted young man who becomes a legend.",
+      "Kvothe, a gifted young man, tells the story of his life and rise to legend. From a troubled childhood, he journeys through magic, music, and hardship. He seeks knowledge and truth about mysterious forces. His story blends adventure, intellect, and personal struggle.",
   },
   {
     id: 14,
@@ -148,7 +150,8 @@ export const Books = [
       "https://i.pinimg.com/736x/2f/54/c2/2f54c22daf9cdad4b5c78ab776d07379.jpg",
     category: "Sci-Fi",
     isReading: false,
-    description: "A hacker is hired for one last job in a cyberpunk world.",
+    description:
+      "Case, a washed-up hacker, is hired for a dangerous mission in a cyberpunk world. He enters a digital space where powerful corporations and AI control everything. As the job unfolds, he faces unexpected dangers. The story defines the genre with its vision of the future.",
   },
 
   {
@@ -160,6 +163,6 @@ export const Books = [
     category: "Sci-Fi",
     isReading: false,
     description:
-      "A dystopian future where surveillance and control dominate society.",
+      "In a dystopian society, Big Brother watches every move of its citizens. Winston Smith secretly rebels against the oppressive regime. Truth is manipulated, and freedom is nearly nonexistent. The story is a powerful warning about surveillance and total control.",
   },
 ];

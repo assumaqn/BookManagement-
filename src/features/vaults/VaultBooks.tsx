@@ -10,8 +10,13 @@ function VaultBooks() {
   const query = searchParams.get("category") ?? "";
 
   let BookToDisplay = vaultData;
-  if (query && query !== "All") {
-    BookToDisplay = BookToDisplay.filter((book) => book.category === query);
+
+  if (query === "read") {
+    BookToDisplay = BookToDisplay.filter((book) => book.isReading);
+  } else if (query === "unread") {
+    BookToDisplay = BookToDisplay.filter((book) => !book.isReading);
+  } else if (query === "all") {
+    BookToDisplay = vaultData;
   }
 
   // 2. Search filter

@@ -24,6 +24,9 @@ function HomeStatues() {
       </span>
     );
 
+  const completedGoal =
+    totalReadBooks >= Goal && totalReadBooks !== 0 && Goal !== 0;
+
   const goalDescription =
     Goal === 0 ? (
       <p className="text-xl font-bold text-gray-700">
@@ -58,6 +61,7 @@ function HomeStatues() {
         tag={`${progress}%`}
         amount={goalAmount}
         description={goalDescription}
+        bg={completedGoal ? "bg-lime-400" : ""}
       />
     </div>
   );
