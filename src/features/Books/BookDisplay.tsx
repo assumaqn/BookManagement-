@@ -3,6 +3,7 @@ import BaseCard from "../../ui/BaseCard";
 
 import { useBook } from "../../context/context";
 import { useSearchParams } from "react-router-dom";
+import NoFound from "./NoFound";
 
 type Book = {
   id: number;
@@ -14,27 +15,24 @@ type Book = {
   description: string;
 };
 
-let BookToDisplay: Book[] = Books;
 function BookDisplay() {
-  const { vault, AddToVault } = useBook();
+  const { vault, AddToVault, searchQuery } = useBook();
   const [searchParams] = useSearchParams();
   const query: string = searchParams.get("category") ?? "";
 
-  if (query == "All") {
-    BookToDisplay = Books;
+  let BookToDisplay = Books;
+  if (query && query !== "All") {
+    BookToDisplay = BookToDisplay.filter((book) => book.category === query);
   }
-  if (query == "Fantasy") {
-    BookToDisplay = Books.filter((book) => book.category == query);
+
+  // 2. Search filter
+  if (searchQuery) {
+    BookToDisplay = BookToDisplay.filter((book) =>
+      book.title.toLowerCase().includes(searchQuery.toLowerCase()),
+    );
   }
-  if (query == "Sci-Fi") {
-    BookToDisplay = Books.filter((book) => book.category == query);
-  }
-  if (query == "Romance") {
-    BookToDisplay = Books.filter((book) => book.category == query);
-  }
-  if (query == "Literary Fiction") {
-    BookToDisplay = Books.filter((book) => book.category == query);
-    console.log(BookToDisplay);
+  if (BookToDisplay.length == 0) {
+    return <NoFound message="No Book found" />;
   }
 
   function handleAdd(book: Book) {

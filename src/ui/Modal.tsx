@@ -38,13 +38,12 @@ function Modal() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            {/* modal box animation */}
             <motion.div
               initial={{ scale: 0.9, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.9, y: 20, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="w-96 rounded-lg bg-white p-6"
+              className="w-[30%] rounded-lg bg-white p-6"
             >
               <h2 className="mb-4 text-xl font-semibold">
                 Enter how many books you want to read
@@ -53,6 +52,7 @@ function Modal() {
               <form onSubmit={handleSubmit}>
                 <input
                   type="text"
+                  autoFocus
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Type your annual Goal...."

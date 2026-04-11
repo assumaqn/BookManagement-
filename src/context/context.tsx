@@ -15,25 +15,31 @@ type Book = {
 type State = {
   vault: Book[];
   Goal: number;
+  searchQuery: string;
 };
 
 type Action =
   | { type: "added to vault"; payload: Book }
   | { type: "toggleRead"; payload: number }
   | { type: "DeleteBook"; payload: number }
-  | { type: "annualGoal"; payload: number };
+  | { type: "annualGoal"; payload: number }
+  | { type: "search"; payload: string };
 
 type ContextType = {
   vault: Book[];
   Goal: number;
+  searchQuery: string;
+
   AddToVault: (book: Book) => void;
   ToggleRead: (id: number) => void;
   DeleteBook: (id: number) => void;
   handelGoal: (goal: number) => void;
+  handleSearchQuery: (query: string) => void;
 };
 const initialState: State = {
   vault: [],
   Goal: 0,
+  searchQuery: "",
 };
 
 const BookContext = createContext<ContextType | null>(null);
@@ -68,6 +74,11 @@ function reducer(state: State, action: Action): State {
         ...state,
         Goal: action.payload,
       };
+    case "search":
+      return {
+        ...state,
+        searchQuery: action.payload,
+      };
 
     default:
       return state;
@@ -75,7 +86,10 @@ function reducer(state: State, action: Action): State {
 }
 
 function BookState({ children }: { children: ReactNode }) {
-  const [{ vault, Goal }, dispatch] = useReducer(reducer, initialState);
+  const [{ vault, Goal, searchQuery }, dispatch] = useReducer(
+    reducer,
+    initialState,
+  );
 
   function AddToVault(book: Book) {
     const current = Books.find((el) => el.id == book.id);
@@ -105,9 +119,23 @@ function BookState({ children }: { children: ReactNode }) {
   function handelGoal(goal: number) {
     dispatch({ type: "annualGoal", payload: goal });
   }
+
+  function handleSearchQuery(query: string) {
+    console.log(query);
+    dispatch({ type: "search", payload: query });
+  }
   return (
     <BookContext.Provider
-      value={{ vault, AddToVault, ToggleRead, DeleteBook, Goal, handelGoal }}
+      value={{
+        vault,
+        AddToVault,
+        ToggleRead,
+        DeleteBook,
+        Goal,
+        handelGoal,
+        searchQuery,
+        handleSearchQuery,
+      }}
     >
       {children}
     </BookContext.Provider>

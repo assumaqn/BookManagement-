@@ -1,10 +1,15 @@
 import { useSearchParams } from "react-router-dom";
 import Input from "../../ui/Input";
+import { useState } from "react";
+import { useBook } from "../../context/context";
 
 function BookNav() {
+  const { handleSearchQuery } = useBook();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const activeCategory = searchParams.get("category");
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const activeCategory = searchParams.get("category") || "All";
 
   const categories = [
     { name: "All" },
@@ -19,9 +24,18 @@ function BookNav() {
     setSearchParams(searchParams);
   };
 
+  function handleSearch(query: string) {
+    setSearchQuery(query);
+    handleSearchQuery(query);
+  }
   return (
     <div className="flex items-center justify-between gap-10 border-b-[0.75px] border-gray-300 pb-4">
-      <Input width="25" placeholder="Search any book by title..." />
+      <Input
+        width="25"
+        value={searchQuery}
+        placeholder="Search any book by title..."
+        onChange={handleSearch}
+      />
 
       <nav className="flex items-center gap-10 text-sm">
         {categories.map((category) => {
